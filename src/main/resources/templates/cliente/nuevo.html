@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+       <div>
+        <a href="/cliente/listar">listar</a>	
+    </div>
+    <div>
+        <form action="#" th:action="@{/cliente/crear}" th:object="${cliente}" method="post">
+            <input type="text" name="cli_dni" id="dni" placeholder="Ingrese dni" required>
+            <br>
+            <input type="text" name="cli_nombre" id="nombre" placeholder="Ingrese nombre" required>
+            <br>
+            <input type="text" name="cli_apellido" id="apellido" placeholder="Ingrese apellido" required>
+            <br>
+            <input type="text" name="cli_razon_social" id="razon_social" placeholder="Ingrese la razon social" required>
+            <div>
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

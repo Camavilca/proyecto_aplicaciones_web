@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-	<a href="/cliente/nuevo">nuevo</a>	
+	<div>
+		<a href="/cliente/listar">atrax</a>	
+	</div>
     <table border="1">
         <thead>
             <tr>
@@ -16,19 +18,15 @@
 	            <th>nombre</th>
 	            <th>apellido</th>
 	            <th>razon social</th>
-	            <th></th>
-	            <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr data-th-each="cliente : ${clientes}">
+            <tr>
                 <td data-th-text="${cliente.cli_id}"></td>
                 <td data-th-text="${cliente.cli_dni}"></td>
                 <td data-th-text="${cliente.cli_nombre}"></td>
                 <td data-th-text="${cliente.cli_apellido}"></td>
                 <td data-th-text="${cliente.cli_razon_social}"></td>
-                <th><a href="">editar</a></th>
-	            <th><a href="">eliminar</a></th>
             </tr>
         </tbody>
     </table>
