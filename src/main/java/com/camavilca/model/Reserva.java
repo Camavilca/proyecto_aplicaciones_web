@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Entity
 public class Reserva {
 	
-	//Arreglar con Edwin
+	//David
 	
 	@Id
 	@GeneratedValue
