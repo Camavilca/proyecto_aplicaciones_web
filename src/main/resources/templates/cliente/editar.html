@@ -9,26 +9,28 @@
 </head>
 <body>
    <div>
-        <a href="/cliente/listar">listar</a>	
+        <a href="/cliente/listar">atras</a>	
     </div>
     <div>
+    	
      <!--form class="form-group" action="/notesEdit" th:action="@{/notesEdit}" method="post"-->
-    <form class="form-group" action="#" th:action="@{/cliente/crear}" th:object="${cliente}" method="post">
+    <form class="form-group" action="#" th:action="@{/cliente/actualizar}" th:object="${cliente}" method="post">
+    		<input type="hidden" id="id" th:field="${cliente.cli_id}" />
    			 <div class="form-group">
                 <label for="dni">dni</label>
-                <input type="text" name="dni" class="form-control" id="dni" th:field="${cliente.cli_dni}" />
+                <input type="text"  class="form-control" id="dni" th:field="${cliente.cli_dni}" />
             </div>
             <div class="form-group">
                 <label for="apellido">apellido</label>
-                <input type="text" name="apellido" class="form-control" id="apellido" th:field="${cliente.cli_apellido}" />
+                <input type="text" class="form-control" id="apellido" th:field="${cliente.cli_apellido}" />
             </div>
             <div class="form-group">
                 <label for="nombre">nombre</label>
-                <input type="text" name="nombre" class="form-control" id="nombre" th:field="${cliente.cli_nombre}" />
+                <input type="text" class="form-control" id="nombre" th:field="${cliente.cli_nombre}" />
             </div>
              <div class="form-group">
                 <label for="razon social">razon social</label>
-                <input type="text" name="razon_social"  class="form-control" id="razon social" th:field="${cliente.cli_razon_social}" />
+                <input type="text" class="form-control" id="razon social" th:field="${cliente.cli_razon_social}" />
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
             <a href="#" th:href="@{/}" class="btn btn-danger" role="button">Cancel</a>

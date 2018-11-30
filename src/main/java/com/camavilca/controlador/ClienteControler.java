@@ -1,5 +1,7 @@
 package com.camavilca.controlador;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,16 +38,38 @@ public class ClienteControler {
 	@RequestMapping(value = "/crear", method = RequestMethod.POST)
 	public String crear(@Valid Cliente cliente, BindingResult bindingResult, ModelMap mp) {
 		if (bindingResult.hasErrors()) {
-			return "/crud/nuevo";
+			return "/cliente/nuevo";
 		} else {
 			c.save(cliente);
-			mp.put("usuario", cliente);
+			mp.put("cliente", cliente);
 			return "cliente/creado";
 		}
 	}
 
 	@RequestMapping(value = "/creado", method = RequestMethod.POST)
-	public String creado(@RequestParam("usuario") Cliente cliente) {
+	public String creado(@RequestParam("cliente") Cliente cliente) {
 		return "/cliente/creado";
+	}
+	@RequestMapping(value="/borrar/{id}", method=RequestMethod.GET)
+	public String borrar(@PathVariable("id") long id, ModelMap mp){
+	    c.deleteById(id);
+	    mp.put("clientes", c.findAll());
+	    return "cliente/listar";
+	}
+	@RequestMapping(value="/editar/{id}", method=RequestMethod.GET)
+	public String editar(@PathVariable("id") long id, ModelMap mp){
+	    mp.put("cliente", c.findById(id));
+	    return "cliente/editar";
+	}
+	 
+	@RequestMapping(value="/actualizar", method=RequestMethod.POST)
+	public String actualizar(@Valid Cliente cliente, BindingResult bindingResult, ModelMap mp){
+		if (bindingResult.hasErrors()) {
+			return "/cliente/listar";
+		} else {
+			c.save(cliente);
+			mp.put("clientes", cliente);
+			return "cliente/actualizado";
+		}
 	}
 }
