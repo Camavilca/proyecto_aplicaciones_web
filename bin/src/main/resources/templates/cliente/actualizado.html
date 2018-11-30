@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Notes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
 </head>
 <body>
-   <a href="/cliente/nuevo">nuevo</a>	
+	<a href="/cliente/listar">lista</a>	
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,8 +18,6 @@
 	            <th>nombre</th>
 	            <th>apellido</th>
 	            <th>razon social</th>
-	            <th></th>
-	            <th></th>
             </tr>
         </thead>
         <tbody>
@@ -28,14 +27,6 @@
                 <td data-th-text="${cliente.cli_nombre}"></td>
                 <td data-th-text="${cliente.cli_apellido}"></td>
                 <td data-th-text="${cliente.cli_razon_social}"></td>
-				<td>
-				<a th:href="@{'/cliente/borrar/{id}'(id=${cliente.cli_id})}">
-					<i class="fa fa-trash"></i>
-				</a>
-				<a th:href="@{'/cliente/editar/{id}'(id=${cliente.cli_id})}">
-					<i class="fa fa-pencil"></i>
-				</a>
-				</td>
             </tr>
         </tbody>
     </table>

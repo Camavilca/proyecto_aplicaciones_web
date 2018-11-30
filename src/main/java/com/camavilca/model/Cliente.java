@@ -9,7 +9,9 @@ import javax.persistence.Entity;
 @Entity
 @Table
 public class Cliente {
-
+	
+	//Camavilca
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "cli_id")
@@ -26,7 +28,7 @@ public class Cliente {
 
 	@Column(name = "cli_razon_social")
 	private String cli_razon_social;
-
+	
 	public Cliente(long cli_id, int cli_dni, String cli_nombre, String cli_apellido, String cli_razon_social) {
 		super();
 		this.cli_id = cli_id;

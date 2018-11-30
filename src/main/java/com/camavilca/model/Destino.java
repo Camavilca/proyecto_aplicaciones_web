@@ -9,7 +9,9 @@ import javax.persistence.Table;
 @Table
 @Entity
 public class Destino {
-
+	
+	//John
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "des_id")

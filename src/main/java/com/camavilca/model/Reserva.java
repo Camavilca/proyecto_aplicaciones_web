@@ -12,7 +12,9 @@ import javax.persistence.Table;
 @Table
 @Entity
 public class Reserva {
-
+	
+	//Arreglar con Edwin
+	
 	@Id
 	@GeneratedValue
 	@Column
