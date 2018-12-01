@@ -15,7 +15,7 @@ public class Destino {
 	@Id
 	@GeneratedValue
 	@Column(name = "des_id")
-	private int des_id;
+	private long des_id;
 
 	@Column(name = "des_nombre")
 	private String des_nombre;
@@ -23,7 +23,7 @@ public class Destino {
 	@Column(name = "des_precio")
 	private double des_precio;
 
-	public Destino(int des_id, String des_nombre, double des_precio) {
+	public Destino(long des_id, String des_nombre, double des_precio) {
 		super();
 		this.des_id = des_id;
 		this.des_nombre = des_nombre;
@@ -31,13 +31,14 @@ public class Destino {
 	}
 
 	public Destino () {
+		super();
 	}
 
-	public int getDes_id() {
+	public long getDes_id() {
 		return des_id;
 	}
 
-	public void setDes_id(int des_id) {
+	public void setDes_id(long des_id) {
 		this.des_id = des_id;
 	}
 
