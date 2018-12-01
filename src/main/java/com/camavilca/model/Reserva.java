@@ -32,8 +32,7 @@ public class Reserva {
 	private Date res_fecha;
 	@Column 
 	private Date res_fecha_reserva;
-	@Column
-	private double precio;
+	
 	public int getRes_id() {
 		return res_id;
 	}
@@ -76,17 +75,13 @@ public class Reserva {
 	public void setRes_fecha_reserva(Date res_fecha_reserva) {
 		this.res_fecha_reserva = res_fecha_reserva;
 	}
-	public double getPrecio() {
-		return precio;
-	}
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
+	
 	@Override
 	public String toString() {
 		return "Reserva [res_id=" + res_id + ", cli_id=" + cli_id + ", des_id=" + des_id + ", res_asiento="
 				+ res_asiento + ", res_hora=" + res_hora + ", res_fecha=" + res_fecha + ", res_fecha_reserva="
-				+ res_fecha_reserva + ", precio=" + precio + "]";
+				+ res_fecha_reserva + "]";
 	}
+	
 	
 }

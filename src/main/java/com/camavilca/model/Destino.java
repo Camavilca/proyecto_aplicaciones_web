@@ -15,29 +15,52 @@ public class Destino {
 	@Id
 	@GeneratedValue
 	@Column(name = "des_id")
-	private int id;
+	private int des_id;
 
 	@Column(name = "des_nombre")
-	private String nombre;
+	private String des_nombre;
 	
-	public int getId() {
-		return id;
+	@Column(name = "des_precio")
+	private double des_precio;
+
+	public Destino(int des_id, String des_nombre, double des_precio) {
+		super();
+		this.des_id = des_id;
+		this.des_nombre = des_nombre;
+		this.des_precio = des_precio;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public Destino () {
 	}
 
-	public String getNombre() {
-		return nombre;
+	public int getDes_id() {
+		return des_id;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setDes_id(int des_id) {
+		this.des_id = des_id;
+	}
+
+	public String getDes_nombre() {
+		return des_nombre;
+	}
+
+	public void setDes_nombre(String des_nombre) {
+		this.des_nombre = des_nombre;
+	}
+
+	public double getDes_precio() {
+		return des_precio;
+	}
+
+	public void setDes_precio(double des_precio) {
+		this.des_precio = des_precio;
 	}
 
 	@Override
 	public String toString() {
-		return "Destino [id=" + id + ", nombre=" + nombre + "]";
+		return "Destino [des_id=" + des_id + ", des_nombre=" + des_nombre + ", des_precio=" + des_precio + "]";
 	}
+	
+	
 }
