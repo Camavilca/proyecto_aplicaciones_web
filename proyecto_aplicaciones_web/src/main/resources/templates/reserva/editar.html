@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    
+</head>
+<body>
+   <div>
+        <a href="/reserva/listar">atras</a>	
+    </div>
+    <div>
+    	
+     <!--form class="form-group" action="/notesEdit" th:action="@{/notesEdit}" method="post"-->
+    <form class="form-group" action="#" th:action="@{/reserva/actualizar}" th:object="${reserva}" method="post">
+            <input type="hidden" id="res_id" th:field="${reserva.res_id}" />
+            <input type="hidden" id="cli_id" th:field="${reserva.cli_id}" />
+            <input type="hidden" id="des_id" th:field="${reserva.des_id}" />
+            <!--Colocar ComboBox Dinamico 
+                (Select - Opcion - foreing key - Spring Tool Suite)
+                 para los ID de cli_id y des_id-->
+   			 <div class="form-group">
+                <label for="res_asiento">Asiento Reservado</label>
+                <input type="number"  class="form-control" id="res_asiento" th:field="${reserva.res_asiento}" />
+            </div>
+   			 <div class="form-group">
+                <label for="res_hora">Hora Reservada</label>
+                <input type="time"  class="form-control" id="res_hora" th:field="${reserva.res_hora}" />
+            </div>            
+   			 <div class="form-group">
+                <label for="res_fecha">Fecha de Reservacion</label>
+                <input type="date"  class="form-control" id="res_fecha" th:field="${reserva.res_fecha}" />
+            </div>
+   			 <div class="form-group">
+                <label for="res_fecha_reserva">Fecha Reservada</label>
+                <input type="date"  class="form-control" id="res_fecha_reserva" th:field="${reserva.res_fecha_reserva}" />
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="#" th:href="@{/}" class="btn btn-danger" role="button">Cancel</a>
+    </form>
+    </div>
+</body>
+</html>
